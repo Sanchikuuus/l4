@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         //print(checkPass("123zA!"))
         //print(addSpliter("123456789"))
         //print(revers("abcdef"))
-        print(splitNameSurname("SashkoShel"))
+        //print(splitNameSurname("SashkoShel"))
+        print(checkIchNa("Игоревич"))
     }
     
     
@@ -130,6 +131,14 @@ class ViewController: UIViewController {
             }
         }
         return [""]
+    }
+    
+    func checkIchNa(_ str : String) -> Bool {
+        if str.hasSuffix("ич") || str.hasSuffix("на") {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
