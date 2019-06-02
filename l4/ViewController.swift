@@ -129,7 +129,7 @@ class ViewController: UIViewController {
                 return [String(str1), String(str2), String(str3)]
             }
         }
-        return ""
+        return [""]
     }
 }
 
