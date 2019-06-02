@@ -16,7 +16,9 @@ class ViewController: UIViewController {
         //print(antimat("fuck you bitch"))
         //print(sampler(["lada", "seda", "dela", "tama", "data"], "da"))
         //print(transliter("ТеСт ТеКсТа ЗаБоРчИкОм"))
-        print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
+        //print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
+        print(checkPass("123zA!"))
+        
     }
     
     
@@ -76,6 +78,21 @@ class ViewController: UIViewController {
         }
         
         return sortMass
+    }
+    
+    func checkPass(_ str : String) -> Int {
+        var strong = 0
+        let startEndMass : [[Int]] = [ [48, 57], [97, 122], [65, 90], [33, 47] ]
+        
+        for mass in startEndMass {
+            for i in mass[0]...mass[1] {
+                if str.contains(Character(UnicodeScalar(i)!)) {
+                    strong += 1
+                    break
+                }
+            }
+        }
+        return strong == 4 ? 5 : strong
     }
     
 }
