@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         //print(transliter("ТеСт ТеКсТа ЗаБоРчИкОм"))
         //print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
         //print(checkPass("123zA!"))
-        print(addSpliter("123456789"))
+        //print(addSpliter("123456789"))
+        print(revers("abcdef"))
     }
     
     
@@ -105,5 +106,17 @@ class ViewController: UIViewController {
         
         return result as String
     }
+    
+    func revers(_ str : String) -> String {
+        var result = Array(str)
+        let length = str.count - 1
+        
+        for i in 0...(length / 2) {
+            (result[i], result[length-i]) = (result[length-i], result[i])
+        }
+        
+        return String(result)
+    }
+    
 }
 
