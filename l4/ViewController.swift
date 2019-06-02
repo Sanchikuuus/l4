@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         //print(sampler(["lada", "seda", "dela", "tama", "data"], "da"))
         //print(transliter("ТеСт ТеКсТа ЗаБоРчИкОм"))
         //print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
-        print(checkPass("123zA!"))
-        
+        //print(checkPass("123zA!"))
+        print(addSpliter("123456789"))
     }
     
     
@@ -95,5 +95,15 @@ class ViewController: UIViewController {
         return strong == 4 ? 5 : strong
     }
     
+    func addSpliter(_ str : String) -> String {
+        let result : NSMutableString = NSMutableString(string: str)
+        let comas = str.count / 3 - (str.count % 3 == 0 ? 1 : 0)
+        
+        for i in 1...comas {
+            result.insert(",", at: (str.count) - i * 3 )
+        }
+        
+        return result as String
+    }
 }
 
