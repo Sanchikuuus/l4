@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(antimat("fuck you bitch"))
+        //print(antimat("fuck you bitch"))
+        print(sampler(["lada", "seda", "dela", "tama", "data"], "da"))
         
     }
     
@@ -31,5 +32,19 @@ class ViewController: UIViewController {
         }
         return clearString
     }
+    
+    func sampler(_ strMass : [String], _ searched : String) -> [String] {
+        var result : [String] = []
+        
+        for i in strMass {
+            if i.contains(searched) {
+                result.append(i)
+            }
+        }
+        
+        return result
+    }
+    
+    
 }
 
