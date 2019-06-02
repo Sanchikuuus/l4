@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         //print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
         //print(checkPass("123zA!"))
         //print(addSpliter("123456789"))
-        print(revers("abcdef"))
+        //print(revers("abcdef"))
+        print(splitNameSurname("SashkoShel"))
     }
     
     
@@ -118,5 +119,17 @@ class ViewController: UIViewController {
         return String(result)
     }
     
+    func splitNameSurname (_ str : String) -> [String] {
+        for i in 1..<str.count {
+            if str[String.Index(encodedOffset: i)].isUppercase {
+                let strIndex = String.Index(encodedOffset: i)
+                let str1 = str[str.startIndex..<strIndex]
+                let str2 = str[strIndex..<str.endIndex]
+                let str3 = str1 + " " + str2
+                return [String(str1), String(str2), String(str3)]
+            }
+        }
+        return ""
+    }
 }
 
