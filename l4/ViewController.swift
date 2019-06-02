@@ -21,7 +21,8 @@ class ViewController: UIViewController {
         //print(addSpliter("123456789"))
         //print(revers("abcdef"))
         //print(splitNameSurname("SashkoShel"))
-        print(checkIchNa("Игоревич"))
+        //print(checkIchNa("Игоревич"))
+        print(myNameIs("Sasha"))
     }
     
     
@@ -139,6 +140,11 @@ class ViewController: UIViewController {
         } else {
             return false
         }
+    }
+    
+    func myNameIs(_ str : String) -> Int {
+        let strName = str
+        return strName.count
     }
 }
 
