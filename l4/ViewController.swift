@@ -15,7 +15,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         //print(antimat("fuck you bitch"))
         //print(sampler(["lada", "seda", "dela", "tama", "data"], "da"))
-        print(transliter("ТеСт ТеКсТа ЗаБоРчИкОм"))
+        //print(transliter("ТеСт ТеКсТа ЗаБоРчИкОм"))
+        print(sorter([5, 7, 3, 7, 7, 9, 3, 5, 1, 2, 3, 4, 6, 8, 0]))
     }
     
     
@@ -59,5 +60,23 @@ class ViewController: UIViewController {
         
         return convertedStr
     }
+    
+    func sorter(_ mass : [Int]) -> [Int] {
+        var sortMass = Array(Set(mass))
+        var needSort = true
+        
+        while needSort {
+            needSort = false
+            for i in 0..<sortMass.count - 1 {
+                if sortMass[i] > sortMass[i+1] {
+                    ( sortMass[i], sortMass[i+1] ) = ( sortMass[i+1], sortMass[i] )
+                    needSort = true
+                }
+            }
+        }
+        
+        return sortMass
+    }
+    
 }
 
